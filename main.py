@@ -22,5 +22,6 @@ while True:
     c.upgrade()
     c_count = c.get_cookies()
     c.buy_product(c_count)
+    c.kill_achievements()
     c.click_big_cookie()
     time.sleep(0.01)
