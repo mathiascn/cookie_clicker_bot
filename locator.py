@@ -6,3 +6,4 @@ class MainPageLocators(object):
     UPGRADE_PARENT = (By.ID, 'upgrades')
     UPGRADES_AVAILABLE = (By.CLASS_NAME, 'enabled')
     GOLDEN_COOKIE = (By.CLASS_NAME, 'shimmer')
+    KILL_ACHIEVEMENTS = (By.CLASS_NAME, 'close')
