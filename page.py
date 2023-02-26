@@ -10,9 +10,7 @@ class BasePage(object):
 class MainPage(BasePage):
     def get_cookies(self):
         try:
-            element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(MainPageLocators.COOKIES))
-            cookies_text = element.text.split()[0]
-            return float(cookies_text.replace(',', ''))
+            return self.driver.execute_script(f'return Game.cookies;')
         except Exception as e:
             print(f'get_cookies exception: {e}')
     
@@ -58,3 +56,9 @@ class MainPage(BasePage):
 
         except Exception as e:
             print(f'buy_product exception: {e}')
+    
+    def kill_achievements(self):
+        try:
+            self.driver.find_element(*MainPageLocators.KILL_ACHIEVEMENTS).click()
+        except:
+            pass
